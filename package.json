@@ -25,6 +25,9 @@
   },
   "name": "carloc",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
    "main": "CarLoc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
