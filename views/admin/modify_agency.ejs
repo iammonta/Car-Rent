@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../partials/head') %>
+
+</head>
+
+
+<body>
+    <%- include ('../partials/admin_navbar') %>
+
+
+    <div class="container px-4 ">
+        <%- include ('../partials/flash') %>
+    </div>
+
+
+
+    <div class="container justify-content-center align-items-center mt-5 ">
+        <div class="row">
+            <div class="col-md-4 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <img src="" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Edit agency</h5>
+                        <form class="px-4 py-4" action="/admin/agencies/<%= agence.id %>/modify_agency?_method=PUT"
+                            method="POST">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormUsername">Agency Name</label>
+                                <input type="text" name="name" class="form-control" value="<%= agence.name %>" autofocus
+                                    maxlength="15" minlength="3" id="exampleDropdownFormEmail1" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Adress</label>
+                                <input type="text" name="adress" value="<%= agence.adress %>" class="form-control"
+                                    id="exampleDropdownFormEmail1" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">Phone Number</label>
+                                <input type="number" name="phone" value="<%= agence.phone %>" class="form-control"
+                                    maxlength="8" id="exampleDropdownFormPassword1" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">Description</label>
+                                <input type="text" name="description" value="<%= agence.description %>"
+                                    class="form-control" id="exampleDropdownFormPassword1" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+
+
+                            <br>
+                            <a class="btn btn-success btn-block" href="/admin/agencies/<%=agence.id%>">
+                                Back</a>
+
+                            <button class="btn btn-success btn-block">Edit</button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <%- include ('../partials/footer') %>
+
+</body>
+
+
+</html>

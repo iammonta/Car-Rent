@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<body>
+    <!-- Responsive navbar-->
+    <%- include('./partials/navbar') %>
+    <center> <%- include ('./partials/flash') %>
+    </center>
+
+    <div class="container justify-content-center align-items-center mt-5 ">
+        <div class="row">
+            <div class="col-md-4 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <img src="" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Please specify the period in which you desire to rent the car </h5>
+                        <form class="px-5 py-5" action="/<%= agency_id %>/<%= car_id %>/checkout" method="POST">
+
+                            <div>
+                                <label for="first_date">From</label>
+
+
+                                <input type="date" id="first_date" name="first_date" required>
+
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+
+                            <div>
+                                <label for="second_date">To</label>
+                                <input type="date" id="second_date" name="second_date" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+                            <br>
+
+                            <button type="submit" class="btn btn-success btn-block">Proceed</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Footer-->
+    <%- include('./partials/footer') %>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

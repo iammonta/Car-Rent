@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New agency</title>
+</head>
+
+<body>
+    <center>
+        <form action="/agencies" method="POST">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="agency[name]" required>
+            </div>
+            <div>
+                <label for="adress">adress</label>
+                <input type="text" id="adress" name="agency[adress]" required>
+            </div>
+               <div>
+                   <label for="email">Email</label>
+                   <input type="text" id="email" name="agency[email]" required>
+               </div>
+            <div>
+                <label for="adress">image</label>
+                <input type="text" id="image" name="agency[image]" required>
+            </div>
+            <div>
+                <label for="desc">Description</label>
+
+
+                <input type="text" id="desc" name="agency[description]" required>
+
+                <textarea name="description" placeholder="Please describe the agency"
+                    class="form-control" rows="4" cols="50" id="exampleDropdownFormPassword1">
+</textarea>
+
+
+            </div>
+
+
+            <button>Add Agency</button>
+        </form>
+        <a href="/agencies">All agencies</a>
+    </center>
+</body>
+
+</html>

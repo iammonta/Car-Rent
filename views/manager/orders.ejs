@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+
+<body>
+    <!-- Responsive navbar-->
+    <%- include('../partials/manager_navbar') %>
+
+    <div class="container justify-content-center align-items-center mt-5 ">
+        <div class="row">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title">Manager Profile</h4>
+
+                    </span></p>
+
+
+
+
+                    <h4>Search Order by ID <form action="/admin/orders/search" method="POST">
+                            <input type="search" size="40" name="order_id">
+                            <button class="btn btn-success btn-block">Search</button>
+                        </form>
+                    </h4>
+
+
+
+
+                </div>
+
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+
+    <!-- Footer-->
+    <%- include('../partials/footer') %>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <!-- Core theme JS-->
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

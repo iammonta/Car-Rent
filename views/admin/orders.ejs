@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+
+<body>
+    <!-- Responsive navbar-->
+    <%- include('../partials/admin_navbar') %>
+
+    <div class="container justify-content-center align-items-center mt-5 ">
+        <div class="row">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title">Admin Profile</h4>
+                    <p class="heading1"><strong>Mr/Mrs</strong><span class="float-right text1">
+                            <%=currentUser.username%>
+                        </span></p>
+                    <p class="heading1"><strong>Email</strong><span class="float-right text1">
+                            <%=currentUser.email%>
+                        </span></p>
+                    <p class="heading1"><strong>Orders</strong><br><span class="float-right text1">
+                        </span></p>
+
+
+
+
+                    <h4>Search Order by ID <form action="/admin/orders/search" method="POST">
+                            <input type="search" size="40" name="order_id">
+                            <button class="btn btn-success btn-block">Search</button>
+                        </form>
+                    </h4>
+
+
+
+                    <div class="row gx-lg-5">
+
+                        <% for (let order of orders) {%>
+
+                        <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card bg-light border-0 h-100">
+                                <div class="card-body  p-4 p-lg-5 pt-0 pt-lg-0">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                            class="bi bi-cloud-download"></i></div>
+                                    <h2 class="fs-5 fw-bold"> Order ID: <%=order.id%> </h2>
+                                    <p class="mb-0">
+                                        <strong> Agency: <%= order.agency %>
+                                            <br> Car : <%= order.car %><br>
+                                            Period: <%= order.period %><br>
+                                            Total: <%= order.total %> TND <br>
+                                            Date: <%= order.date %> <br>
+                                            Payment details:<br>
+                                            Full name: <%= order.card_name %><br>
+                                            Card Number: <%= order.card_num %> </strong>
+                                    </p>
+                                    <center> <a class="btn btn-primary btn-lg"
+                                            onclick="window.open('/<%= order.id %>/print')">Print</a>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <%}%>
+                </div>
+
+                    <div class="dropdown-divider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <!-- Footer-->
+    <%- include('../partials/footer') %>
+                        <!-- Bootstrap core JS-->
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+                        </script>
+                        <!-- Core theme JS-->
+                        <script src="/js/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+
+<body>
+    <center>
+        <div class="col-lg-6 col-xxl-4 mb-5">
+            <div class="card bg-light border-0 h-100">
+                <div class="card-body  p-4 p-lg-5 pt-0 pt-lg-0">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                            class="bi bi-cloud-download"></i></div>
+                    <h2 class="fs-5 fw-bold">Order ID: <%=orders.id%> </h2>
+                    <p class="mb-0">
+                        <strong> Agency: <%= orders.agency %><br>
+                            <br> Car : <%= orders.car %><br><br>
+                            Period: <%= orders.period %><br><br>
+                            Total: <%= orders.total %> TND <br><br>
+                            Date: <%= orders.date %> <br><br>
+                            Payment details:<br><br>
+                            Full name: <%= orders.card_name %><br><br>
+                            Card Number: <%= orders.card_num %> </strong>
+                    </p>
+                    <center> <a class="btn btn-primary btn-lg" onclick="window.print()">Print</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
